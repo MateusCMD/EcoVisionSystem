@@ -49,8 +49,13 @@ export class MemStorage implements IStorage {
   async createTransaction(insertTransaction: InsertTransaction): Promise<Transaction> {
     const id = randomUUID();
     const transaction: Transaction = { 
-      ...insertTransaction, 
-      id, 
+      id,
+      userId: insertTransaction.userId,
+      cans: insertTransaction.cans ?? 0,
+      glass: insertTransaction.glass ?? 0,
+      paper: insertTransaction.paper ?? 0,
+      plastic: insertTransaction.plastic ?? 0,
+      totalCredits: insertTransaction.totalCredits,
       createdAt: new Date().toISOString() 
     };
     this.transactions.set(id, transaction);
