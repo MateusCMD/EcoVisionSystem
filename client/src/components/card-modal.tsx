@@ -52,11 +52,6 @@ export default function CardModal({ isOpen, onClose }: CardModalProps) {
             <div className="absolute top-4 left-6">
               <div className="w-6 h-5 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-sm shadow-md relative">
                 <div className="absolute inset-0.5 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-sm">
-                  <div className="grid grid-cols-3 gap-px p-0.5 h-full">
-                    {[...Array(9)].map((_, i) => (
-                      <div key={i} className="bg-yellow-600 rounded-sm opacity-60"></div>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
