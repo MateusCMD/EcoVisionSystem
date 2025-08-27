@@ -51,8 +51,6 @@ export default function CardModal({ isOpen, onClose }: CardModalProps) {
             {/* EMV Chip */}
             <div className="absolute top-4 left-6">
               <div className="w-6 h-5 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-sm shadow-md relative">
-                <div className="absolute inset-0.5 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-sm">
-                </div>
               </div>
             </div>
             
