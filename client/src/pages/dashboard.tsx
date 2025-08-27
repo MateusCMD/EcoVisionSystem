@@ -155,26 +155,31 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-eco-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-eco-green-50 via-white to-eco-green-100 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-eco-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-eco-green-100 sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-eco-green-500 rounded-lg flex items-center justify-center">
-              <i className="fas fa-leaf text-white"></i>
+      <header className="bg-white/80 backdrop-blur-md shadow-lg border-b border-eco-green-200 sticky top-0 z-20">
+        <div className="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-eco-green-400 to-eco-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+              </svg>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-eco-green-800">Ecovision</h1>
-              <p className="text-sm text-eco-green-600" data-testid="text-username">
-                {currentUser.name}
+              <h1 className="text-2xl font-black text-eco-green-800 tracking-tight">Ecovision</h1>
+              <p className="text-sm text-eco-green-600 font-medium" data-testid="text-username">
+                Olá, {currentUser.name.split(' ')[0]}!
               </p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-4">
-            <div className="text-right">
-              <p className="text-sm text-gray-500">Seus Créditos</p>
-              <p className="text-lg font-bold text-eco-green-600" data-testid="text-total-credits">
+          <div className="flex items-center space-x-6">
+            <div className="text-right bg-gradient-to-br from-eco-green-50 to-eco-green-100 px-4 py-2 rounded-2xl">
+              <p className="text-xs text-gray-500 font-medium">Seus Créditos</p>
+              <p className="text-xl font-black text-eco-green-600" data-testid="text-total-credits">
                 {currentUser.totalCredits} tokens
               </p>
             </div>
@@ -202,13 +207,18 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto p-6">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-black text-gray-800 mb-3 tracking-tight">
             Selecione os Materiais para Reciclagem
           </h2>
-          <p className="text-gray-600">
-            Adicione a quantidade de cada material que você possui
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Adicione a quantidade de cada material que você possui e ganhe tokens ECO
           </p>
+          <div className="mt-4 flex items-center justify-center space-x-2">
+            <div className="w-12 h-0.5 bg-eco-green-300 rounded-full"></div>
+            <div className="w-3 h-3 bg-eco-green-400 rounded-full"></div>
+            <div className="w-12 h-0.5 bg-eco-green-300 rounded-full"></div>
+          </div>
         </div>
 
         {/* Material Cards */}
