@@ -62,11 +62,11 @@ export default function CardModal({ isOpen, onClose }: CardModalProps) {
             </div>
             
             {/* Card Content */}
-            <div className="relative z-10 flex flex-col justify-between h-full">
+            <div className="relative z-10 flex flex-col justify-between h-full text-white">
               <div className="flex justify-between items-start">
-                <div className="text-white">
-                  <p className="text-xs font-bold opacity-90 tracking-wide">CARTÃO DE CRÉDITOS</p>
-                  <p className="text-2xl font-black tracking-wider mt-1">ECOcred</p>
+                <div>
+                  <p className="text-xs font-bold tracking-wide text-white">CARTÃO DE CRÉDITOS</p>
+                  <p className="text-2xl font-black tracking-wider mt-1 text-white">ECOcred</p>
                 </div>
                 <div className="w-10 h-10 bg-white bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -76,23 +76,23 @@ export default function CardModal({ isOpen, onClose }: CardModalProps) {
                 </div>
               </div>
               
-              <div className="mt-6">
-                <div className="text-white font-mono tracking-widest text-lg font-bold mb-2">
+              <div className="mt-4">
+                <div className="text-white font-mono tracking-widest text-lg font-bold mb-3 text-center">
                   •••• •••• •••• 1234
                 </div>
                 
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-xs opacity-70 font-medium">VÁLIDO ATÉ</p>
+                    <p className="text-xs font-medium text-white opacity-80">VÁLIDO ATÉ</p>
                     <p className="text-sm font-bold text-white">12/28</p>
                   </div>
-                  <div>
-                    <p className="text-xs opacity-90 font-bold tracking-wider">SUSTENTABILIDADE & RECICLAGEM</p>
-                    <div className="mt-1 flex space-x-1">
-                      <div className="w-8 h-1 bg-white rounded-full"></div>
-                      <div className="w-8 h-1 bg-white bg-opacity-70 rounded-full"></div>
-                      <div className="w-8 h-1 bg-white bg-opacity-50 rounded-full"></div>
-                      <div className="w-8 h-1 bg-white bg-opacity-30 rounded-full"></div>
+                  <div className="text-right">
+                    <p className="text-xs font-bold tracking-wider text-white opacity-90">SUSTENTABILIDADE & RECICLAGEM</p>
+                    <div className="mt-1 flex space-x-1 justify-end">
+                      <div className="w-6 h-1 bg-white rounded-full"></div>
+                      <div className="w-6 h-1 bg-white opacity-70 rounded-full"></div>
+                      <div className="w-6 h-1 bg-white opacity-50 rounded-full"></div>
+                      <div className="w-6 h-1 bg-white opacity-30 rounded-full"></div>
                     </div>
                   </div>
                 </div>
