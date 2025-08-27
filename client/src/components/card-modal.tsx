@@ -31,8 +31,8 @@ export default function CardModal({ isOpen, onClose }: CardModalProps) {
         </p>
         
         {/* Card Slot Animation */}
-        <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 mb-6 shadow-inner">
-          <div className="w-full h-40 bg-gradient-to-br from-eco-green-400 via-eco-green-500 to-eco-green-800 rounded-2xl flex flex-col justify-between p-6 shadow-2xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden border border-eco-green-300">
+        <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 mb-6 shadow-inner flex justify-center">
+          <div className="w-full max-w-sm h-40 bg-gradient-to-br from-eco-green-400 via-eco-green-500 to-eco-green-800 rounded-2xl flex flex-col justify-between p-6 shadow-2xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden border border-eco-green-300">
             
             {/* Holographic effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 animate-pulse"></div>

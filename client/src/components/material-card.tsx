@@ -52,12 +52,22 @@ export default function MaterialCard({ material, quantity, onIncrement, onDecrem
                 <stop offset="100%" stopColor="currentColor" stopOpacity="0.6"/>
               </linearGradient>
             </defs>
-            <path d="M16 4h16l-2 4H18l-2-4z" fill="currentColor" opacity="0.9"/>
-            <path d="M18 8h12l-2 32c0 2-1 4-3 4h-2c-2 0-3-2-3-4l-2-32z" fill="url(#glassGradient)"/>
-            <ellipse cx="24" cy="4" rx="8" ry="2" fill="currentColor" opacity="0.7"/>
-            <path d="M20 12h8v2h-8z" fill="white" opacity="0.3"/>
-            <path d="M21 16h6v2h-6z" fill="white" opacity="0.2"/>
-            <ellipse cx="24" cy="35" rx="3" ry="8" fill="white" opacity="0.1"/>
+            {/* Bottle neck */}
+            <rect x="20" y="4" width="8" height="8" rx="1" fill="currentColor" opacity="0.9"/>
+            {/* Bottle cap */}
+            <rect x="19" y="2" width="10" height="4" rx="2" fill="currentColor" opacity="0.8"/>
+            {/* Main bottle body */}
+            <path d="M16 12h16c2 0 4 2 4 4v24c0 2-2 4-4 4H16c-2 0-4-2-4-4V16c0-2 2-4 4-4z" fill="url(#glassGradient)"/>
+            {/* Bottle label */}
+            <rect x="18" y="18" width="12" height="8" rx="1" fill="white" opacity="0.3"/>
+            <rect x="19" y="20" width="10" height="1" rx="0.5" fill="currentColor" opacity="0.4"/>
+            <rect x="19" y="22" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.3"/>
+            <rect x="19" y="24" width="6" height="1" rx="0.5" fill="currentColor" opacity="0.3"/>
+            {/* Bottle highlights */}
+            <ellipse cx="20" cy="16" rx="1" ry="3" fill="white" opacity="0.4"/>
+            <ellipse cx="28" cy="20" rx="1" ry="2" fill="white" opacity="0.3"/>
+            {/* Bottle bottom */}
+            <ellipse cx="24" cy="42" rx="8" ry="2" fill="currentColor" opacity="0.5"/>
           </svg>
         );
       case 'paper':
