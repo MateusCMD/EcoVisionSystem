@@ -17,6 +17,7 @@ interface Materials {
   paper: number;
   plastic: number;
   electronics: number;
+  medicines: number;
 }
 
 export default function Dashboard() {
@@ -28,6 +29,7 @@ export default function Dashboard() {
     paper: 0,
     plastic: 0,
     electronics: 0,
+    medicines: 0,
   });
   const [showCreditModal, setShowCreditModal] = useState(false);
   const [showCardModal, setShowCardModal] = useState(false);
@@ -63,7 +65,7 @@ export default function Dashboard() {
       setShowCreditModal(true);
       
       // Reset materials
-      setMaterials({ cans: 0, glass: 0, paper: 0, plastic: 0, electronics: 0 });
+      setMaterials({ cans: 0, glass: 0, paper: 0, plastic: 0, electronics: 0, medicines: 0 });
       
       // Invalidate rankings cache
       queryClient.invalidateQueries({ queryKey: ["/api/rankings"] });
@@ -113,6 +115,13 @@ export default function Dashboard() {
       icon: "fas fa-microchip",
       color: "green",
     },
+    {
+      id: "medicines" as keyof Materials,
+      name: "Medicamentos Vencidos",
+      tokens: 10,
+      icon: "fas fa-pills",
+      color: "red",
+    },
   ];
 
   const calculateTotalCredits = () => {
@@ -121,7 +130,8 @@ export default function Dashboard() {
       materials.glass * 2 +
       materials.paper * 1 +
       materials.plastic * 4 +
-      materials.electronics * 6
+      materials.electronics * 6 +
+      materials.medicines * 10
     );
   };
 

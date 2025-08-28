@@ -56,6 +56,7 @@ export class MemStorage implements IStorage {
       paper: insertTransaction.paper ?? 0,
       plastic: insertTransaction.plastic ?? 0,
       electronics: insertTransaction.electronics ?? 0,
+      medicines: insertTransaction.medicines ?? 0,
       totalCredits: insertTransaction.totalCredits,
       createdAt: new Date().toISOString() 
     };

@@ -21,6 +21,7 @@ export default function MaterialCard({ material, quantity, onIncrement, onDecrem
     yellow: "bg-yellow-100 text-yellow-600",
     purple: "bg-purple-100 text-purple-600",
     green: "bg-green-100 text-green-600",
+    red: "bg-red-100 text-red-600",
   };
 
   const getIcon = () => {
@@ -147,6 +148,34 @@ export default function MaterialCard({ material, quantity, onIncrement, onDecrem
             <rect x="20" y="22" width="8" height="1" fill="white" opacity="0.4"/>
             <rect x="20" y="24" width="8" height="1" fill="white" opacity="0.3"/>
             <rect x="20" y="26" width="8" height="1" fill="white" opacity="0.3"/>
+          </svg>
+        );
+      case 'medicines':
+        return (
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="medicineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="currentColor" stopOpacity="1"/>
+                <stop offset="50%" stopColor="currentColor" stopOpacity="0.8"/>
+                <stop offset="100%" stopColor="currentColor" stopOpacity="0.6"/>
+              </linearGradient>
+            </defs>
+            {/* Main pill body */}
+            <ellipse cx="24" cy="24" rx="16" ry="10" fill="url(#medicineGradient)"/>
+            {/* Pill division line */}
+            <rect x="8" y="23" width="32" height="2" fill="white" opacity="0.7"/>
+            {/* Top half highlight */}
+            <ellipse cx="24" cy="18" rx="14" ry="6" fill="white" opacity="0.2"/>
+            {/* Bottom half shadow */}
+            <ellipse cx="24" cy="30" rx="14" ry="6" fill="currentColor" opacity="0.3"/>
+            {/* Pill markings/text simulation */}
+            <circle cx="18" cy="18" r="1.5" fill="white" opacity="0.6"/>
+            <circle cx="30" cy="18" r="1.5" fill="white" opacity="0.6"/>
+            <rect x="20" y="29" width="8" height="1" rx="0.5" fill="white" opacity="0.5"/>
+            <rect x="22" y="31" width="4" height="1" rx="0.5" fill="white" opacity="0.4"/>
+            {/* Cross symbol for medical */}
+            <rect x="23" y="16" width="2" height="6" fill="white" opacity="0.8"/>
+            <rect x="20" y="18" width="8" height="2" fill="white" opacity="0.8"/>
           </svg>
         );
       default:

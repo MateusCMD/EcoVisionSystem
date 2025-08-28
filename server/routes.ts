@@ -15,6 +15,7 @@ const materialsSchema = z.object({
   paper: z.number().min(0),
   plastic: z.number().min(0),
   electronics: z.number().min(0),
+  medicines: z.number().min(0),
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -42,10 +43,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/materials/submit", async (req, res) => {
     try {
       const { userId, materials } = req.body;
-      const { cans, glass, paper, plastic, electronics } = materialsSchema.parse(materials);
+      const { cans, glass, paper, plastic, electronics, medicines } = materialsSchema.parse(materials);
       
       // Calculate total credits
-      const totalCredits = (cans * 1) + (glass * 2) + (paper * 1) + (plastic * 4) + (electronics * 6);
+      const totalCredits = (cans * 1) + (glass * 2) + (paper * 1) + (plastic * 4) + (electronics * 6) + (medicines * 10);
       
       if (totalCredits === 0) {
         return res.status(400).json({ message: "Adicione pelo menos um material para reciclar" });
@@ -59,6 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         paper,
         plastic,
         electronics,
+        medicines,
         totalCredits,
       });
 
