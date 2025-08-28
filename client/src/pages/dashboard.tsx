@@ -16,6 +16,7 @@ interface Materials {
   glass: number;
   paper: number;
   plastic: number;
+  electronics: number;
 }
 
 export default function Dashboard() {
@@ -26,6 +27,7 @@ export default function Dashboard() {
     glass: 0,
     paper: 0,
     plastic: 0,
+    electronics: 0,
   });
   const [showCreditModal, setShowCreditModal] = useState(false);
   const [showCardModal, setShowCardModal] = useState(false);
@@ -61,7 +63,7 @@ export default function Dashboard() {
       setShowCreditModal(true);
       
       // Reset materials
-      setMaterials({ cans: 0, glass: 0, paper: 0, plastic: 0 });
+      setMaterials({ cans: 0, glass: 0, paper: 0, plastic: 0, electronics: 0 });
       
       // Invalidate rankings cache
       queryClient.invalidateQueries({ queryKey: ["/api/rankings"] });
@@ -104,6 +106,13 @@ export default function Dashboard() {
       icon: "fas fa-wine-glass",
       color: "purple",
     },
+    {
+      id: "electronics" as keyof Materials,
+      name: "Lixo Eletrônico",
+      tokens: 6,
+      icon: "fas fa-microchip",
+      color: "green",
+    },
   ];
 
   const calculateTotalCredits = () => {
@@ -111,7 +120,8 @@ export default function Dashboard() {
       materials.cans * 1 +
       materials.glass * 2 +
       materials.paper * 1 +
-      materials.plastic * 4
+      materials.plastic * 4 +
+      materials.electronics * 6
     );
   };
 
@@ -222,7 +232,7 @@ export default function Dashboard() {
         </div>
 
         {/* Material Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {materialTypes.map((material) => (
             <MaterialCard
               key={material.id}

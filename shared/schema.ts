@@ -17,6 +17,7 @@ export const transactions = pgTable("transactions", {
   glass: integer("glass").notNull().default(0),
   paper: integer("paper").notNull().default(0),
   plastic: integer("plastic").notNull().default(0),
+  electronics: integer("electronics").notNull().default(0),
   totalCredits: integer("total_credits").notNull(),
   createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
 });
@@ -32,6 +33,7 @@ export const insertTransactionSchema = createInsertSchema(transactions).pick({
   glass: true,
   paper: true,
   plastic: true,
+  electronics: true,
   totalCredits: true,
 });
 

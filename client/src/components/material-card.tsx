@@ -20,6 +20,7 @@ export default function MaterialCard({ material, quantity, onIncrement, onDecrem
     blue: "bg-blue-100 text-blue-600", 
     yellow: "bg-yellow-100 text-yellow-600",
     purple: "bg-purple-100 text-purple-600",
+    green: "bg-green-100 text-green-600",
   };
 
   const getIcon = () => {
@@ -106,6 +107,46 @@ export default function MaterialCard({ material, quantity, onIncrement, onDecrem
             <circle cx="18" cy="18" r="2" fill="white" opacity="0.3"/>
             <circle cx="30" cy="30" r="2" fill="white" opacity="0.3"/>
             <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="white" strokeWidth="1" fill="none" opacity="0.2"/>
+          </svg>
+        );
+      case 'electronics':
+        return (
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="electronicsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="currentColor" stopOpacity="1"/>
+                <stop offset="50%" stopColor="currentColor" stopOpacity="0.8"/>
+                <stop offset="100%" stopColor="currentColor" stopOpacity="0.6"/>
+              </linearGradient>
+            </defs>
+            {/* Main chip body */}
+            <rect x="12" y="12" width="24" height="24" rx="3" fill="url(#electronicsGradient)"/>
+            {/* Chip pins/legs */}
+            <rect x="8" y="16" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="8" y="20" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="8" y="24" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="8" y="28" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="36" y="16" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="36" y="20" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="36" y="24" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="36" y="28" width="4" height="2" fill="currentColor" opacity="0.8"/>
+            <rect x="16" y="8" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="20" y="8" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="24" y="8" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="28" y="8" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="16" y="36" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="20" y="36" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="24" y="36" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            <rect x="28" y="36" width="2" height="4" fill="currentColor" opacity="0.8"/>
+            {/* Chip details */}
+            <rect x="16" y="16" width="16" height="16" rx="2" fill="white" opacity="0.2"/>
+            <circle cx="18" cy="18" r="1" fill="white" opacity="0.6"/>
+            <circle cx="30" cy="18" r="1" fill="white" opacity="0.6"/>
+            <circle cx="18" cy="30" r="1" fill="white" opacity="0.6"/>
+            <circle cx="30" cy="30" r="1" fill="white" opacity="0.6"/>
+            <rect x="20" y="22" width="8" height="1" fill="white" opacity="0.4"/>
+            <rect x="20" y="24" width="8" height="1" fill="white" opacity="0.3"/>
+            <rect x="20" y="26" width="8" height="1" fill="white" opacity="0.3"/>
           </svg>
         );
       default:
